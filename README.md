@@ -19,7 +19,7 @@ pip install pycui
 ## Basic Usage
 
 ```python
-from pycui-utils import categories, basic_categories, special_categories, organizations
+from pycui_utils import categories, basic_categories, special_categories, organizations
 
 # Access all categories
 all_categories = categories.all()
