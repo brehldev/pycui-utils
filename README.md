@@ -9,7 +9,8 @@ PyCUI provides easy access to CUI category information, including category codes
 ## Installation
 
 ```bash
-pip install pycui
+pip install pycui_utils
+uv add pycui_utils
 ```
 
 ## Requirements
