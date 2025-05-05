@@ -15,7 +15,7 @@ def resource_filename(package: str, resource: str) -> str:
     return os.path.join(base_dir, package, resource)
 
 
-DATABASE_DIR: str = resource_filename("pycui", "databases")
+DATABASE_DIR: str = resource_filename("pycui_utils", "databases")
 
 
 class CategoryData(TypedDict):

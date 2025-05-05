@@ -46,7 +46,7 @@ def test_resource_filename():
     assert "test_package" in result
     assert result.endswith("test_package/test_resource")
 
-    assert DATABASE_DIR.endswith("pycui/databases")
+    assert DATABASE_DIR.endswith("pycui_utils/databases")
     assert os.path.isdir(os.path.dirname(DATABASE_DIR))
 
 
