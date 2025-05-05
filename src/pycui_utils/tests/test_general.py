@@ -4,11 +4,11 @@ import pytest
 
 from pycui_utils import (
     DATABASE_DIR,
-    Categories,
     BasicCategories,
+    Categories,
+    Category,
     Organizations,
     SpecialCategories,
-    Category,
     resource_filename,
 )
 
