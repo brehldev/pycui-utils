@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 from collections.abc import Iterator
 from typing import TypedDict
 
-__all__ = ["categories", "special_categories", "basic_categories", "organizations"]
+__all__ = ["categories", "special_categories", "basic_categories", "organizations", "CategoryData", "Category"]
 
 
 def resource_filename(package: str, resource: str) -> str:
