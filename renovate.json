@@ -14,7 +14,7 @@
       "description": "Automatically merges updates to the GitLab CI/CD configuration file.",
       "groupName": "CI/CD",
       "matchFileNames": [
-        ".github/workflows/rust.yml"
+        ".github/workflows/main.yml"
       ]
     }
   ],
