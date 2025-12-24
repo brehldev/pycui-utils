@@ -1,4 +1,4 @@
-# PyCUI
+# pycui-utils
 
 A Python library for managing Controlled Unclassified Information (CUI) categories and their metadata.
 
@@ -15,7 +15,7 @@ uv add pycui_utils
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.12+
 
 ## Basic Usage
 
