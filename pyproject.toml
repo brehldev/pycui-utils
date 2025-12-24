@@ -1,85 +1,114 @@
 [project]
 name = "pycui-utils"
+authors = [
+    { name = "brehldev", email = "github@brehl.dev" }
+]
 version = "0.1.0"
 description = "Python library for managing Controlled Unclassified Information (CUI) categories and their metadata."
-keywords = ["cui", "controlled unclassified information", "security", "classification", "government", "compliance", "information security", "Executive Order 13526", "NARA"]
 readme = "README.md"
-requires-python = ">=3.9"
-license = 'MIT'
+requires-python = ">=3.12"
 dependencies = []
-
-[project.scripts]
-pycui-utils = "pycui_utils:main"
+keywords = [
+    "CUI",
+    "Controlled Unclassified Information",
+    "CUI categories",
+    "CUI markings",
+    "DoD",
+    "Department of Defense",
+    "NARA",
+    "CUI registry",
+    "information security",
+    "data classification",
+    "document marking",
+    "unclassified information",
+    "CUI banner",
+    "CUI designation",
+    "federal information",
+    "sensitive information",
+    "CNSI",
+    "controlled information",
+    "CUI program",
+    "DoD instruction",
+    "email markings",
+    "document control",
+]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.9.7,<0.10.0"]
+build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "black>=25.1.0",
-    "coverage>=7.8.0",
-    "mypy>=1.15.0",
-    "pre-commit>=4.2.0",
-    "pytest>=8.3.5",
-    "ruff>=0.11.8",
+    "black>=25.12.0",
+    "coverage>=7.13.0",
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "pytest-benchmark>=5.2.3",
+    "ruff>=0.14.9",
+    "ty>=0.0.6",
+    "types-pyyaml>=6.0.12.20250915",
 ]
+
+[tool.ty.rules]
+index-out-of-bounds = "ignore"
+
+[tool.black]
+line-length = 120
+target-version = ['py314']
+
+[tool.ruff]
+target-version = "py314"
+line-length = 120
 
 [tool.ruff.lint]
 select = [
-    "E", "F", "W", # default Flake8
-    "I", # isort
-    "ISC", # flake8-implicit-str-concat
-    "B", # flake8-bugbear
-    "C4", # flake8-comprehensions
-    "UP", # pyupgrade
-    "ARG001", # unused arguments in functions
+    "E",
+    "F",
+    "W",
+    "I",
+    "ISC",
+    "B",
+    "C4",
+    "UP",
+    "ARG001",
+    "C4",
+    "PTH",
+    "TID",
+    "SIM",
+    "ICN"
 ]
 exclude = [
-    "scripts",
-    ".bzr",
-    ".direnv",
-    ".eggs",
     ".git",
     ".git-rewrite",
-    ".hg",
     ".mypy_cache",
-    ".nox",
-    ".pants.d",
     ".pytype",
     ".ruff_cache",
-    ".svn",
-    ".tox",
     ".venv",
     "__pypackages__",
     "_build",
-    "buck-out",
     "build",
     "dist",
-    "node_modules",
     "venv",
+    "tests"
 ]
 ignore = [
-    "E501", # line too long, handled by black
-    "B008", # do not perform function calls in argument defaults
-    "W191", # indentation contains tabs
-    "B904", # Allow raising exceptions without from e, for HTTPException
+    "B008",
+    "W191",
+    "B904",
+    "D417"
 ]
-# Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.lint.pyupgrade]
 keep-runtime-typing = true
 
-[tool.pytest]
-testpaths = ["src/pycui/tests"]
-python_files = "test_*.py"
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
-[tool.coverage.run]
-source = ["src"]
-omit = ["*/tests/*"]
+[tool.ruff.lint.pydoclint]
+# Skip docstrings which fit on a single line.
+ignore-one-line-docstrings = true
 
-[tool.coverage.report]
-omit = [
-    "*/tests/*"
-]
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "SIM"]

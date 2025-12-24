@@ -3,10 +3,14 @@
   "extends": [
     "config:best-practices",
     ":enableVulnerabilityAlerts",
+    ":enablePreCommit",
     ":maintainLockFilesWeekly",
     ":automergeDigest",
     ":automergeTesters",
     ":automergeMinor"
+  ],
+  "labels": [
+    "renovate"
   ],
   "packageRules": [
     {
@@ -21,6 +25,5 @@
   "schedule": [
    "before 8am on Sunday"
   ],
-  "timezone": "America/New_York",
-  "prConcurrentLimit": 8
+  "timezone": "America/New_York"
 }
